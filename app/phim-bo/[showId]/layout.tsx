@@ -18,10 +18,12 @@ interface TvShow {
 export async function generateMetadata({
   params,
 }: {
-  params: { showId: string };
+  params: Promise<{ showId: string }>;
 }): Promise<Metadata> {
+  const { showId } = await params; // Directly await params to get showId
+
   try {
-    const response = await axios.get(`${BASE_URL}/tv/${params.showId}`, {
+    const response = await axios.get(`${BASE_URL}/tv/${showId}`, {
       params: { api_key: API_KEY, language: "vi" },
     });
     const show: TvShow = response.data;
@@ -49,7 +51,7 @@ export async function generateMetadata({
         title,
         description,
         type: "website",
-        url: `https://thegioiphim.netlify.app/phim-bo/${params.showId}`,
+        url: `https://thegioiphim.netlify.app/phim-bo/${showId}`,
         images: [
           {
             url: imageUrl,

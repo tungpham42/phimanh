@@ -20,15 +20,14 @@ interface TvShow {
 export async function generateMetadata({
   params,
 }: {
-  params: { showId: string; season: string; episode: string };
+  params: Promise<{ showId: string; season: string; episode: string }>;
 }): Promise<Metadata> {
+  const { showId, season, episode } = await params;
   try {
-    const response = await axios.get(`${BASE_URL}/tv/${params.showId}`, {
+    const response = await axios.get(`${BASE_URL}/tv/${showId}`, {
       params: { api_key: API_KEY, language: "vi" },
     });
     const show: TvShow = response.data;
-    const season = params.season;
-    const episode = params.episode;
     const title = `Phim "${show.name}" - Tập ${episode} (Mùa ${season}) | Phim Bộ Mới Nhất`;
     const description = show.overview
       ? `${show.overview.substring(0, 160)}...`
@@ -52,7 +51,7 @@ export async function generateMetadata({
         title,
         description,
         type: "website",
-        url: `https://thegioiphim.netlify.app/phim-bo/${params.showId}`,
+        url: `https://thegioiphim.netlify.app/phim-bo/${showId}`,
         images: [
           {
             url: imageUrl,

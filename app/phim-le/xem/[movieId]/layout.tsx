@@ -18,16 +18,14 @@ const BASE_DOMAIN = "https://thegioiphim.netlify.app";
 export async function generateMetadata({
   params,
 }: {
-  params: { movieId: string };
+  params: Promise<{ movieId: string }>;
 }): Promise<Metadata> {
+  const { movieId } = await params; // Await params to get movieId
   try {
-    const response = await axios.get<Movie>(
-      `${BASE_URL}/movie/${params.movieId}`,
-      {
-        params: { api_key: API_KEY, language: "vi" },
-        timeout: 10000, // Add timeout for better error handling
-      }
-    );
+    const response = await axios.get<Movie>(`${BASE_URL}/movie/${movieId}`, {
+      params: { api_key: API_KEY, language: "vi" },
+      timeout: 10000, // Add timeout for better error handling
+    });
     const movie = response.data;
 
     const title = `${movie.title} | Xem Phim Lẻ Mới Nhất`;
@@ -49,7 +47,7 @@ export async function generateMetadata({
         title,
         description,
         type: "website",
-        url: `${BASE_DOMAIN}/phim-le/xem/${params.movieId}`,
+        url: `${BASE_DOMAIN}/phim-le/xem/${movieId}`,
         images: [
           {
             url: `https://image.tmdb.org/t/p/w1280${
