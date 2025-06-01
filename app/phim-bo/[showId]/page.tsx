@@ -17,8 +17,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faTv, faListUl } from "@fortawesome/free-solid-svg-icons";
 
 // Environment variables
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+const API_KEY = "fecb69b9d0ad64dbe0802939fafc338d";
+const BASE_URL = "https://api.themoviedb.org/3";
 
 // TypeScript interfaces for TMDB API response
 interface Episode {

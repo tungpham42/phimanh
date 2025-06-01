@@ -32,9 +32,9 @@ interface Movie {
 }
 
 // Environment variables with type assertion
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY!;
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL!;
-const EMBED_URL = process.env.NEXT_PUBLIC_EMBED_URL!;
+const API_KEY = "fecb69b9d0ad64dbe0802939fafc338d"!;
+const BASE_URL = "https://api.themoviedb.org/3"!;
+const EMBED_URL = "https://thegioiphim.netlify.app/player.js"!;
 
 // Reusable component for movie information
 const MovieInfo: React.FC<{ movie: Movie }> = ({ movie }) => (

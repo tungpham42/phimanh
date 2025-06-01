@@ -19,8 +19,8 @@ import { faTv, faStar, faPlay } from "@fortawesome/free-solid-svg-icons";
 import DefaultPagination from "@/components/DefaultPagination";
 import ShowSearch from "@/components/ShowSearch";
 
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+const API_KEY = "fecb69b9d0ad64dbe0802939fafc338d";
+const BASE_URL = "https://api.themoviedb.org/3";
 const PLACEHOLDER_IMAGE =
   "https://via.placeholder.com/500x750/333333/555555?text=No+Poster";
 
