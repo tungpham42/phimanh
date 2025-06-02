@@ -51,7 +51,7 @@ export async function generateMetadata({
         title,
         description,
         type: "website",
-        url: `https://thegioiphim.netlify.app/phim-bo/${showId}`,
+        url: `https://thegioiphim.netlify.app/phim-bo/phim/${showId}/xem/${season}/${episode}`,
         images: [
           {
             url: imageUrl,
