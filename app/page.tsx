@@ -13,7 +13,7 @@ export default function HomePage() {
         className="hero-section position-relative"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png')",
+            "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/banner.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "70vh",
@@ -49,11 +49,10 @@ export default function HomePage() {
           <Col md={6} lg={4}>
             <Card className="h-100 border-0 shadow-lg bg-dark text-light">
               <div
-                className="card-img-top"
+                className="custom-card-image"
                 style={{
                   height: "200px",
-                  backgroundImage:
-                    "url('https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png')",
+                  backgroundImage: "url('/film.png')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -77,11 +76,10 @@ export default function HomePage() {
           <Col md={6} lg={4}>
             <Card className="h-100 border-0 shadow-lg bg-dark text-light">
               <div
-                className="card-img-top"
+                className="custom-card-image"
                 style={{
                   height: "200px",
-                  backgroundImage:
-                    "url('https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png')",
+                  backgroundImage: "url('/tv.png')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
