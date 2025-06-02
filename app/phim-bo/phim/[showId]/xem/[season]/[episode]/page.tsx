@@ -16,7 +16,7 @@ import {
 
 const API_KEY = "fecb69b9d0ad64dbe0802939fafc338d";
 const BASE_URL = "https://api.themoviedb.org/3";
-const EMBED_URL = "https://seplayer.netlify.app";
+const EMBED_URL = "https://hoc.cotuong.top/se_player.php";
 
 interface Show {
   name?: string;
@@ -89,7 +89,9 @@ const StreamPlayer: React.FC = () => {
         <div className="d-flex flex-wrap justify-content-center gap-3 mt-3 mb-2">
           {Number(episode) > 1 && (
             <Link
-              href={`/phim-bo/phim/${showId}/xem/${season}/${Number(episode) - 1}`}
+              href={`/phim-bo/phim/${showId}/xem/${season}/${
+                Number(episode) - 1
+              }`}
               passHref
             >
               <Button variant="outline-danger">
@@ -100,7 +102,9 @@ const StreamPlayer: React.FC = () => {
           )}
           {Number(episode) < totalEpisodes && (
             <Link
-              href={`/phim-bo/phim/${showId}/xem/${season}/${Number(episode) + 1}`}
+              href={`/phim-bo/phim/${showId}/xem/${season}/${
+                Number(episode) + 1
+              }`}
               passHref
             >
               <Button variant="danger">
