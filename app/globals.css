@@ -183,7 +183,11 @@ body {
 }
 .accordion-button:not(.collapsed):hover {
   background-color: var(--primary-hover) !important;
-  color: var(--foreground) !important;
+  color: #ffffff !important;
+}
+.accordion-button:not(.collapsed):hover > .text-danger,
+.accordion-button:not(.collapsed):hover > .text-muted {
+  color: #ffffff !important;
 }
 .accordion-header:hover {
   background-color: var(--light-dark) !important;
