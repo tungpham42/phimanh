@@ -179,7 +179,7 @@ const ShowList = () => {
                         : "Không có mô tả."}
                     </Card.Text>
                     <Link
-                      href={`/phim-bo/${show.id}`}
+                      href={`/phim-bo/phim/${show.id}`}
                       className="mt-auto"
                       passHref
                     >
