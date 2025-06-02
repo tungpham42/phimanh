@@ -16,7 +16,7 @@ import {
 
 const API_KEY = "fecb69b9d0ad64dbe0802939fafc338d";
 const BASE_URL = "https://api.themoviedb.org/3";
-const EMBED_URL = "https://superembed.fly.dev";
+const EMBED_URL = "https://seplayer.netlify.app";
 
 interface Show {
   name?: string;

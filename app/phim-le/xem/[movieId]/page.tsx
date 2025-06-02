@@ -34,7 +34,7 @@ interface Movie {
 
 const API_KEY = "fecb69b9d0ad64dbe0802939fafc338d";
 const BASE_URL = "https://api.themoviedb.org/3";
-const EMBED_URL = "https://superembed.fly.dev";
+const EMBED_URL = "https://seplayer.netlify.app";
 
 const MovieInfo: React.FC<{ movie: Movie }> = ({ movie }) => (
   <div className="bg-dark rounded p-4 mb-4 shadow">
