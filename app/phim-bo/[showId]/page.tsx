@@ -15,7 +15,12 @@ import {
   Badge,
 } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faListUl, faPlay } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHome,
+  faListUl,
+  faPlay,
+  faTv,
+} from "@fortawesome/free-solid-svg-icons";
 
 const API_KEY = "fecb69b9d0ad64dbe0802939fafc338d";
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -120,7 +125,8 @@ const ShowDetails = () => {
           <div className="d-flex align-items-center gap-3 mb-3">
             <h1 className="mb-0">{show.name}</h1>
             <Badge bg="danger" className="fs-6">
-              TV Series
+              <FontAwesomeIcon icon={faTv} className="me-2" />
+              Phim bộ
             </Badge>
           </div>
 
