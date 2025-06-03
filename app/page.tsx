@@ -47,7 +47,7 @@ export default function HomePage() {
         <h2 className="text-center mb-5">Danh mục phim</h2>
         <Row className="justify-content-center g-4">
           <Col md={6} lg={4}>
-            <Card className="h-100 border-0 shadow-lg bg-dark text-light">
+            <Card className="h-100 shadow-lg bg-dark text-light">
               <div
                 className="custom-card-image"
                 style={{
@@ -74,7 +74,7 @@ export default function HomePage() {
             </Card>
           </Col>
           <Col md={6} lg={4}>
-            <Card className="h-100 border-0 shadow-lg bg-dark text-light">
+            <Card className="h-100 shadow-lg bg-dark text-light">
               <div
                 className="custom-card-image"
                 style={{

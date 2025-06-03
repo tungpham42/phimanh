@@ -134,7 +134,7 @@ const MovieList: React.FC = () => {
           <Row className="g-4">
             {shows.map((show) => (
               <Col key={show.id} xl={3} lg={4} md={6}>
-                <Card className="h-100 border-0 shadow-lg bg-secondary text-light">
+                <Card className="h-100 shadow-lg bg-secondary text-light">
                   <div
                     className="position-relative"
                     style={{
