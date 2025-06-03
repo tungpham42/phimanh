@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function TvShowsLayout({ children }: { children: ReactNode }) {
+export default function MovieListLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="vi">
       <body>{children}</body>

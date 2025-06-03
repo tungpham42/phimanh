@@ -39,7 +39,7 @@ const API_KEY = "fecb69b9d0ad64dbe0802939fafc338d";
 const BASE_URL = "https://api.themoviedb.org/3";
 const PLACEHOLDER_IMAGE = "https://dummyimage.com/260x200/cccccc/555555.png";
 
-const ShowList: React.FC = () => {
+const MovieList: React.FC = () => {
   const [shows, setShows] = useState<Show[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -48,7 +48,7 @@ const ShowList: React.FC = () => {
   const [originalLanguage, setOriginalLanguage] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const fetchTvShows = useCallback(async () => {
+  const fetchMovies = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -75,8 +75,8 @@ const ShowList: React.FC = () => {
   }, [currentPage, originalLanguage, searchQuery]);
 
   useEffect(() => {
-    fetchTvShows();
-  }, [fetchTvShows]);
+    fetchMovies();
+  }, [fetchMovies]);
 
   const handleSearch = useCallback((query: string) => {
     setSearchQuery(query);
@@ -194,4 +194,4 @@ const ShowList: React.FC = () => {
   );
 };
 
-export default ShowList;
+export default MovieList;

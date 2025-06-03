@@ -75,7 +75,7 @@ const MoviePlayer: React.FC<{ movieId: string; title: string }> = ({
   </div>
 );
 
-const ShowDetails: React.FC = () => {
+const MovieDetails: React.FC = () => {
   const { movieId } = useParams<{ movieId: string }>();
   const [movie, setMovie] = useState<Movie | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -175,4 +175,4 @@ const ShowDetails: React.FC = () => {
   );
 };
 
-export default ShowDetails;
+export default MovieDetails;

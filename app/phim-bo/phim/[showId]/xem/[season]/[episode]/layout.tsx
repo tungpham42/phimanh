@@ -94,7 +94,7 @@ export async function generateMetadata({
   }
 }
 
-export default function ShowDetailsLayout({
+export default function StreamPlayerLayout({
   children,
 }: {
   children: ReactNode;
