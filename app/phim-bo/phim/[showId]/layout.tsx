@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 import axios from "axios";
+import { getHostUrl } from "@/utils/getHostUrl";
 
 // Environment variables
 const API_KEY = "fecb69b9d0ad64dbe0802939fafc338d";
@@ -21,6 +22,7 @@ export async function generateMetadata({
   params: Promise<{ showId: string }>;
 }): Promise<Metadata> {
   const { showId } = await params; // Directly await params to get showId
+  const hostUrl = await getHostUrl();
 
   try {
     const response = await axios.get(`${BASE_URL}/tv/${showId}`, {
@@ -34,7 +36,7 @@ export async function generateMetadata({
       : "Xem phim bộ chất lượng cao, cập nhật liên tục. Thưởng thức phim bộ có phụ đề tiếng Việt.";
     const imageUrl = show.poster_path
       ? `https://image.tmdb.org/t/p/w1280${show.poster_path}`
-      : "https://thegioiphim.netlify.app/1200x630.jpg";
+      : `${hostUrl}/1200x630.jpg`;
 
     return {
       title,
@@ -51,7 +53,7 @@ export async function generateMetadata({
         title,
         description,
         type: "website",
-        url: `https://thegioiphim.netlify.app/phim-bo/phim/${showId}`,
+        url: `${hostUrl}/phim-bo/phim/${showId}`,
         images: [
           {
             url: imageUrl,
@@ -80,10 +82,10 @@ export async function generateMetadata({
         description:
           "Xem phim bộ chất lượng cao, cập nhật liên tục. Thưởng thức phim bộ Hàn Quốc, Trung Quốc, Âu Mỹ,... có phụ đề Việt.",
         type: "website",
-        url: "https://thegioiphim.netlify.app/phim-bo",
+        url: `${hostUrl}/phim-bo`,
         images: [
           {
-            url: "https://thegioiphim.netlify.app/1200x630.jpg",
+            url: `${hostUrl}/1200x630.jpg`,
             width: 1200,
             height: 630,
             alt: "Phim Bộ Mới Nhất",

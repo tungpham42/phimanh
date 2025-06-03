@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 import axios from "axios";
+import { getHostUrl } from "@/utils/getHostUrl";
 
 // Define TypeScript interface for movie data
 interface Movie {
@@ -13,7 +14,6 @@ interface Movie {
 // Environment variables with type assertion
 const API_KEY = "fecb69b9d0ad64dbe0802939fafc338d"!;
 const BASE_URL = "https://api.themoviedb.org/3"!;
-const BASE_DOMAIN = "https://thegioiphim.netlify.app";
 
 export async function generateMetadata({
   params,
@@ -21,6 +21,8 @@ export async function generateMetadata({
   params: Promise<{ movieId: string }>;
 }): Promise<Metadata> {
   const { movieId } = await params; // Await params to get movieId
+  const hostUrl = await getHostUrl();
+  const BASE_DOMAIN = hostUrl;
   try {
     const response = await axios.get<Movie>(`${BASE_URL}/movie/${movieId}`, {
       params: { api_key: API_KEY, language: "vi" },
@@ -51,7 +53,7 @@ export async function generateMetadata({
         images: [
           {
             url: `https://image.tmdb.org/t/p/w1280${
-              movie.poster_path || "/1200x630.jpg"
+              movie.poster_path || `${BASE_DOMAIN}/1200x630.jpg`
             }`,
             width: 1200,
             height: 630,
