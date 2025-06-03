@@ -23,11 +23,11 @@ export default function HomePage() {
       >
         <Container>
           <Row>
-            <Col lg={6} className="text-center text-lg-start">
+            <Col lg={9} className="text-center text-lg-start">
               <h1 className="display-4 fw-bold mb-4">
                 Khám phá thế giới điện ảnh
               </h1>
-              <p className="lead mb-4">
+              <p className="lead mb-4 col-lg-9 col-md-12">
                 Hàng ngàn bộ phim chất lượng cao đang chờ bạn khám phá. Xem mọi
                 lúc, mọi nơi trên mọi thiết bị.
               </p>
