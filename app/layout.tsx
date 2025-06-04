@@ -7,7 +7,7 @@ import { getHostUrl } from "@/utils/getHostUrl";
 export async function generateMetadata(): Promise<Metadata> {
   const hostUrl = await getHostUrl();
   return {
-    title: "Thế giới Phim | Phim Mới Nhất",
+    title: "Phim Ảnh | Phim Mới Nhất",
     description:
       "Xem phim chất lượng cao, cập nhật liên tục. Thưởng thức phim Hàn Quốc, Trung Quốc, Âu Mỹ,... có phụ đề Việt.",
     keywords: [
@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "phim truyền hình",
     ],
     openGraph: {
-      title: "Thế giới Phim | Phim Mới Nhất",
+      title: "Phim Ảnh | Phim Mới Nhất",
       description:
         "Xem phim chất lượng cao, cập nhật liên tục. Thưởng thức phim Hàn Quốc, Trung Quốc, Âu Mỹ,... có phụ đề Việt.",
       type: "website",
@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
           alt: "Phim Mới Nhất",
         },
       ],
-      siteName: "Thế giới Phim",
+      siteName: "Phim Ảnh",
     },
   };
 }
