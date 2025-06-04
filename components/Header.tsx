@@ -18,8 +18,8 @@ const Header: React.FC = () => {
       <Container>
         <Link href="/" passHref legacyBehavior>
           <Navbar.Brand className="d-flex align-items-center">
-            <span className="text-danger fw-bold">THẾ GIỚI</span>
-            <span className="text-light ms-1">PHIM</span>
+            <span className="text-danger fw-bold">PHIM</span>
+            <span className="text-light ms-1">ẢNH</span>
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
