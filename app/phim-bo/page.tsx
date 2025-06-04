@@ -137,7 +137,7 @@ const ShowList = () => {
         {!loading && !error && (
           <Row className="g-4">
             {shows.map((show) => (
-              <Col key={show.id} xl={3} lg={4} md={6}>
+              <Col key={show.id} xl={3} lg={3} md={6}>
                 <Card className="h-100 shadow bg-dark text-light transition-all hover-scale">
                   {/* Poster Image with Rating */}
                   <div
