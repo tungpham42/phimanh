@@ -46,7 +46,7 @@ const ShowList = () => {
     setLoading(true);
     setError(null);
     try {
-      const endpoint = searchQuery ? "/search/tv" : "/discover/tv";
+      const endpoint = searchQuery ? "/search/tv" : "/trending/tv/day";
       const { data } = await axios.get(`${BASE_URL}${endpoint}`, {
         params: {
           api_key: API_KEY,

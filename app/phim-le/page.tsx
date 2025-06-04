@@ -52,7 +52,7 @@ const MovieList: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const endpoint = searchQuery ? "/search/movie" : "/discover/movie";
+      const endpoint = searchQuery ? "/search/movie" : "/trending/movie/day";
       const { data } = await axios.get<ApiResponse>(`${BASE_URL}${endpoint}`, {
         params: {
           api_key: API_KEY,
