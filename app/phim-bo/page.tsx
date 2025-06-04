@@ -46,7 +46,11 @@ const ShowList = () => {
     setLoading(true);
     setError(null);
     try {
-      const endpoint = searchQuery ? "/search/tv" : "/trending/tv/day";
+      const endpoint = originalLanguage
+        ? "/discover/tv"
+        : searchQuery
+        ? "/search/tv"
+        : "/trending/tv/day";
       const { data } = await axios.get(`${BASE_URL}${endpoint}`, {
         params: {
           api_key: API_KEY,
@@ -77,6 +81,7 @@ const ShowList = () => {
 
   const handleReset = useCallback(() => {
     setSearchQuery("");
+    setOriginalLanguage("");
     setCurrentPage(1);
   }, []);
 
