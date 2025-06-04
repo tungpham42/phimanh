@@ -37,7 +37,8 @@ interface ApiResponse {
 // Environment variables
 const API_KEY = "fecb69b9d0ad64dbe0802939fafc338d";
 const BASE_URL = "https://api.themoviedb.org/3";
-const PLACEHOLDER_IMAGE = "https://dummyimage.com/260x200/cccccc/555555.png";
+const PLACEHOLDER_IMAGE =
+  "https://via.placeholder.com/500x750/333333/555555?text=No+Poster";
 
 const MovieList: React.FC = () => {
   const [shows, setShows] = useState<Show[]>([]);
