@@ -54,7 +54,7 @@ h6,
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 25px rgba(220, 53, 69, 0.5) !important;
   border-color: var(--primary);
 }
 
