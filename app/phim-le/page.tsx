@@ -54,7 +54,7 @@ const MovieList: React.FC = () => {
     setError(null);
     try {
       const endpoint = originalLanguage
-        ? "/discover/tv"
+        ? "/discover/movie"
         : searchQuery
         ? "/search/movie"
         : "/trending/movie/day";
