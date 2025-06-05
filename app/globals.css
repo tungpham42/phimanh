@@ -80,6 +80,11 @@ h6,
   color: var(--foreground) !important;
 }
 
+.text-danger {
+  color: var(--primary) !important;
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.5) !important;
+}
+
 /* Form Elements */
 .form-control,
 .form-select {

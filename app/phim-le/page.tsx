@@ -162,7 +162,12 @@ const MovieList: React.FC = () => {
                     </div>
                   </div>
                   <Card.Body className="d-flex flex-column">
-                    <Card.Title className="text-truncate">
+                    <Card.Title
+                      as={Link}
+                      href={`/phim-le/xem/${show.id}`}
+                      className="text-truncate text-danger mb-2"
+                      style={{ textDecoration: "none", fontSize: "1.5rem" }}
+                    >
                       {show.title}
                     </Card.Title>
                     <Card.Text className="text-muted small">

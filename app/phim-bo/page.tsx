@@ -172,7 +172,12 @@ const ShowList = () => {
 
                   {/* Show Info */}
                   <Card.Body className="d-flex flex-column">
-                    <Card.Title className="text-truncate">
+                    <Card.Title
+                      as={Link}
+                      href={`/phim-bo/phim/${show.id}`}
+                      className="text-truncate text-danger mb-2"
+                      style={{ textDecoration: "none", fontSize: "1.5rem" }}
+                    >
                       {show.name}
                     </Card.Title>
                     <Card.Text className="text-muted small mb-2">
