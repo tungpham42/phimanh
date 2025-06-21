@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { getHostUrl } from "@/utils/getHostUrl";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -50,6 +51,7 @@ export default function RootLayout({
         {children}
       </body>
       <Footer />
+      <GoogleAnalytics ga_id="G-HHXZSNQ65X" />
     </html>
   );
 }
