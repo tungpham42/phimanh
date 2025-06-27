@@ -13,24 +13,24 @@ interface TvShow {
   name: string;
   overview: string;
   poster_path: string | null;
+  season: number;
+  episode: number;
 }
 
 // Generate dynamic metadata
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ showId: string }>;
+  params: Promise<{ showId: string; season: string; episode: string }>;
 }): Promise<Metadata> {
-  const { showId } = await params; // Directly await params to get showId
+  const { showId, season, episode } = await params;
   const hostUrl = await getHostUrl();
-
   try {
     const response = await axios.get(`${BASE_URL}/tv/${showId}`, {
       params: { api_key: API_KEY, language: "vi" },
     });
     const show: TvShow = response.data;
-
-    const title = `${show.name} | Phim Bộ Mới Nhất`;
+    const title = `Phim "${show.name}" - Tập ${episode} (Mùa ${season}) | Phim Bộ Mới Nhất`;
     const description = show.overview
       ? `${show.overview.substring(0, 160)}...`
       : "Xem phim bộ chất lượng cao, cập nhật liên tục. Thưởng thức phim bộ có phụ đề tiếng Việt.";
@@ -53,7 +53,7 @@ export async function generateMetadata({
         title,
         description,
         type: "website",
-        url: `${hostUrl}/phim-bo/phim/${showId}`,
+        url: `${hostUrl}/phim-bo/${showId}/${season}/${episode}`,
         images: [
           {
             url: imageUrl,
@@ -96,7 +96,7 @@ export async function generateMetadata({
   }
 }
 
-export default function ShowDetailsLayout({
+export default function StreamPlayerLayout({
   children,
 }: {
   children: ReactNode;

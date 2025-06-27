@@ -89,9 +89,7 @@ const StreamPlayer: React.FC = () => {
         <div className="d-flex flex-wrap justify-content-center gap-3 mt-3 mb-2">
           {Number(episode) > 1 && (
             <Link
-              href={`/phim-bo/phim/${showId}/xem/${season}/${
-                Number(episode) - 1
-              }`}
+              href={`/phim-bo/${showId}/${season}/${Number(episode) - 1}`}
               passHref
             >
               <Button variant="outline-danger">
@@ -102,9 +100,7 @@ const StreamPlayer: React.FC = () => {
           )}
           {Number(episode) < totalEpisodes && (
             <Link
-              href={`/phim-bo/phim/${showId}/xem/${season}/${
-                Number(episode) + 1
-              }`}
+              href={`/phim-bo/${showId}/${season}/${Number(episode) + 1}`}
               passHref
             >
               <Button variant="danger">
@@ -114,10 +110,7 @@ const StreamPlayer: React.FC = () => {
             </Link>
           )}
           {Number(season) > 1 && (
-            <Link
-              href={`/phim-bo/phim/${showId}/xem/${Number(season) - 1}/1`}
-              passHref
-            >
+            <Link href={`/phim-bo/${showId}/${Number(season) - 1}/1`} passHref>
               <Button variant="outline-warning">
                 <FontAwesomeIcon icon={faArrowLeft} className="me-2" />
                 Mùa trước
@@ -125,10 +118,7 @@ const StreamPlayer: React.FC = () => {
             </Link>
           )}
           {Number(season) < totalSeasons && (
-            <Link
-              href={`/phim-bo/phim/${showId}/xem/${Number(season) + 1}/1`}
-              passHref
-            >
+            <Link href={`/phim-bo/${showId}/${Number(season) + 1}/1`} passHref>
               <Button variant="warning">
                 Mùa sau
                 <FontAwesomeIcon icon={faArrowRight} className="ms-2" />
@@ -138,7 +128,7 @@ const StreamPlayer: React.FC = () => {
         </div>
 
         <div className="d-flex flex-wrap justify-content-center gap-3 mt-3">
-          <Link href={`/phim-bo/phim/${showId}`} passHref>
+          <Link href={`/phim-bo/${showId}`} passHref>
             <Button variant="outline-secondary">
               <FontAwesomeIcon icon={faUndo} className="me-2" />
               Quay về phim

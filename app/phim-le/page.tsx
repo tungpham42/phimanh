@@ -164,7 +164,7 @@ const MovieList: React.FC = () => {
                   <Card.Body className="d-flex flex-column">
                     <Card.Title
                       as={Link}
-                      href={`/phim-le/xem/${show.id}`}
+                      href={`/phim-le/${show.id}`}
                       className="text-truncate text-danger mb-2"
                       style={{ textDecoration: "none", fontSize: "1.5rem" }}
                     >
@@ -179,7 +179,7 @@ const MovieList: React.FC = () => {
                         : "Không có mô tả."}
                     </Card.Text>
                     <Link
-                      href={`/phim-le/xem/${show.id}`}
+                      href={`/phim-le/${show.id}`}
                       passHref
                       className="mt-auto"
                     >

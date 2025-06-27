@@ -174,7 +174,7 @@ const ShowList = () => {
                   <Card.Body className="d-flex flex-column">
                     <Card.Title
                       as={Link}
-                      href={`/phim-bo/phim/${show.id}`}
+                      href={`/phim-bo/${show.id}`}
                       className="text-truncate text-danger mb-2"
                       style={{ textDecoration: "none", fontSize: "1.5rem" }}
                     >
@@ -189,7 +189,7 @@ const ShowList = () => {
                         : "Không có mô tả."}
                     </Card.Text>
                     <Link
-                      href={`/phim-bo/phim/${show.id}`}
+                      href={`/phim-bo/${show.id}`}
                       className="mt-auto"
                       passHref
                     >

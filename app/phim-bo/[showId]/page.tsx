@@ -166,7 +166,7 @@ const ShowDetails = () => {
                         className="bg-dark border-secondary"
                       >
                         <Link
-                          href={`/phim-bo/phim/${showId}/xem/${season.season_number}/${episode.episode_number}`}
+                          href={`/phim-bo/${showId}/${season.season_number}/${episode.episode_number}`}
                           passHref
                           className="text-decoration-none"
                         >

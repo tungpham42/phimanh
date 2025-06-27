@@ -49,7 +49,7 @@ export async function generateMetadata({
         title,
         description,
         type: "website",
-        url: `${BASE_DOMAIN}/phim-le/xem/${movieId}`,
+        url: `${BASE_DOMAIN}/phim-le/${movieId}`,
         images: [
           {
             url: `https://image.tmdb.org/t/p/w1280${
