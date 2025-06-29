@@ -23,6 +23,7 @@
       "@/*": ["./*"],
       "@/styles/*": ["styles/*"],
       "@/components/*": ["components/*"],
+      "@/pages/*": ["pages/*"],
       "@/data/*": ["data/*"],
       "@/sounds/*": ["sounds/*"],
       "@/utils/*": ["utils/*"],
