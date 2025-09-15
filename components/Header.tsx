@@ -16,8 +16,12 @@ const Header: React.FC = () => {
       className="border-bottom border-danger"
     >
       <Container>
-        <Link href="/" passHref legacyBehavior>
-          <Navbar.Brand className="d-flex align-items-center">
+        <Link
+          href="/"
+          className="d-flex align-items-center"
+          style={{ textDecoration: "none" }}
+        >
+          <Navbar.Brand as="div">
             <span className="text-danger fw-bold">PHIM</span>
             <span className="text-light ms-1">ẢNH</span>
           </Navbar.Brand>
@@ -25,8 +29,9 @@ const Header: React.FC = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Link href="/" passHref legacyBehavior>
+            <Link href="/" style={{ textDecoration: "none" }}>
               <Nav.Link
+                as="span"
                 active={pathname === "/"}
                 className={`mx-2 ${
                   pathname === "/" ? "text-danger fw-bold" : "text-light"
@@ -35,8 +40,9 @@ const Header: React.FC = () => {
                 Trang chủ
               </Nav.Link>
             </Link>
-            <Link href="/phim-le" passHref legacyBehavior>
+            <Link href="/phim-le" style={{ textDecoration: "none" }}>
               <Nav.Link
+                as="span"
                 active={pathname === "/phim-le"}
                 className={`mx-2 ${
                   pathname === "/phim-le" ? "text-danger fw-bold" : "text-light"
@@ -45,8 +51,9 @@ const Header: React.FC = () => {
                 Phim lẻ
               </Nav.Link>
             </Link>
-            <Link href="/phim-bo" passHref legacyBehavior>
+            <Link href="/phim-bo" style={{ textDecoration: "none" }}>
               <Nav.Link
+                as="span"
                 active={pathname === "/phim-bo"}
                 className={`mx-2 ${
                   pathname === "/phim-bo" ? "text-danger fw-bold" : "text-light"
