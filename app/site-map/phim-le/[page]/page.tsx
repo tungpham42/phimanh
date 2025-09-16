@@ -73,7 +73,7 @@ export default async function SitemapPhimLePage({
         ))}
       </ul>
       <div style={{ textAlign: "center", marginTop: 32 }}>
-        <Link href="/sitemap" style={{ color: "#0070f3" }}>
+        <Link href="/site-map" style={{ color: "#0070f3" }}>
           Quay lại Sitemap Index
         </Link>
       </div>

@@ -73,7 +73,7 @@ export default async function SitemapPhimBoPage({
         ))}
       </ul>
       <div style={{ textAlign: "center", marginTop: 32 }}>
-        <Link href="/sitemap/phim-bo" style={{ color: "#0070f3" }}>
+        <Link href="/site-map/phim-bo" style={{ color: "#0070f3" }}>
           Quay lại Sitemap Phim Bộ
         </Link>
       </div>
