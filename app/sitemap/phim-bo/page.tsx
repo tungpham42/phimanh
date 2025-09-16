@@ -2,7 +2,6 @@ import Link from "next/link";
 
 const API_KEY = "fecb69b9d0ad64dbe0802939fafc338d";
 const BASE_URL = "https://api.themoviedb.org/3";
-const PAGE_SIZE = 20;
 
 async function getTotalPages(): Promise<number> {
   const res = await fetch(

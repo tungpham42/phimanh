@@ -3,6 +3,15 @@ import Link from "next/link";
 const API_KEY = "fecb69b9d0ad64dbe0802939fafc338d";
 const BASE_URL = "https://api.themoviedb.org/3";
 
+interface TVShow {
+  id: number;
+  name: string;
+}
+
+interface TMDBResponse {
+  results: TVShow[];
+}
+
 interface Show {
   id: number;
   name: string;
@@ -16,16 +25,20 @@ async function fetchShows(page: number): Promise<Show[]> {
     }
   );
   if (!res.ok) return [];
-  const data = await res.json();
-  return (data.results || []).map((m: any) => ({ id: m.id, name: m.name }));
+  const data: TMDBResponse = await res.json();
+  return (data.results || []).map((show: TVShow) => ({
+    id: show.id,
+    name: show.name,
+  }));
 }
 
 export default async function SitemapPhimBoPage({
   params,
 }: {
-  params: { page: string };
+  params: Promise<{ page: string }>;
 }) {
-  const pageNum = Number(params.page) || 1;
+  const resolvedParams = await params;
+  const pageNum = Number(resolvedParams.page) || 1;
   const shows = await fetchShows(pageNum);
   return (
     <main
