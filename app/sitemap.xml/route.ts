@@ -1,60 +1,44 @@
-﻿import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
+import { getHostUrl } from '@/utils/getHostUrl';
 
-const API_KEY = "fecb69b9d0ad64dbe0802939fafc338d";
-const BASE_URL = "https://api.themoviedb.org/3";
-
-async function getMovies() {
-  try {
-    const res = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&language=vi&page=1`, { next: { revalidate: 3600 } });
-    if (!res.ok) return [];
-    const data = await res.json();
-    return data.results || [];
-  } catch {
-    return [];
-  }
-}
-
-async function getTVShows() {
-  try {
-    const res = await fetch(`${BASE_URL}/discover/tv?api_key=${API_KEY}&language=vi&page=1`, { next: { revalidate: 3600 } });
-    if (!res.ok) return [];
-    const data = await res.json();
-    return data.results || [];
-  } catch {
-    return [];
-  }
-}
+// Sitemap configuration - centralized
+const MOVIE_BATCHES = 15;
+const TV_BATCHES = 5;
 
 export async function GET() {
-  const baseUrl = 'https://phim.soft.io.vn';
-  const [movies, shows] = await Promise.all([getMovies(), getTVShows()]);
+  const baseUrl = await getHostUrl();
 
-  const staticUrls = [
-    { url: baseUrl, lastmod: new Date().toISOString(), changefreq: 'daily', priority: '1.0' },
-    { url: `${baseUrl}/phim-le`, lastmod: new Date().toISOString(), changefreq: 'daily', priority: '0.9' },
-    { url: `${baseUrl}/phim-bo`, lastmod: new Date().toISOString(), changefreq: 'daily', priority: '0.9' },
-    { url: `${baseUrl}/site-map`, lastmod: new Date().toISOString(), changefreq: 'weekly', priority: '0.8' }
+  // Sitemap ch�nh ch? d?n d?n c�c sitemap con, kh�ng ch?a URLs c?a pages
+  const childSitemaps = [
+    // Movie sitemaps
+    ...Array.from({ length: MOVIE_BATCHES }, (_, i) => ({
+      url: `${baseUrl}/sitemap-movies-${i + 1}.xml`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'weekly',
+      priority: '0.9'
+    })),
+    
+    // TV show sitemaps  
+    ...Array.from({ length: TV_BATCHES }, (_, i) => ({
+      url: `${baseUrl}/sitemap-tv-${i + 1}.xml`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'weekly',
+      priority: '0.9'
+    })),
+
+    // Static pages sitemap
+    {
+      url: `${baseUrl}/sitemap-static.xml`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'daily',
+      priority: '1.0'
+    }
   ];
 
-  const movieUrls = movies.map((movie) => ({
-    url: `${baseUrl}/phim-le/${movie.id}`,
-    lastmod: new Date().toISOString(),
-    changefreq: 'weekly',
-    priority: '0.8'
-  }));
-
-  const showUrls = shows.map((show) => ({
-    url: `${baseUrl}/phim-bo/${show.id}`,
-    lastmod: new Date().toISOString(),
-    changefreq: 'weekly',
-    priority: '0.8'
-  }));
-
-  const allUrls = [...staticUrls, ...movieUrls, ...showUrls];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allUrls.map(item => `  <url>
+${childSitemaps.map(item => `  <url>
     <loc>${item.url}</loc>
     <lastmod>${item.lastmod}</lastmod>
     <changefreq>${item.changefreq}</changefreq>
