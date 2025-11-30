@@ -48,20 +48,24 @@ export default function HomePage() {
         <Row className="justify-content-center g-4">
           <Col md={6} lg={4}>
             <Card className="h-100 shadow-lg bg-dark text-light">
-              <div
-                className="custom-card-image"
-                style={{
-                  height: "200px",
-                  backgroundImage: "url('/film.png')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              ></div>
+              <Link href="/phim-le">
+                <div
+                  className="custom-card-image"
+                  style={{
+                    height: "200px",
+                    backgroundImage: "url('/film.png')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                ></div>
+              </Link>
               <Card.Body className="d-flex flex-column">
-                <Card.Title className="text-danger">
-                  <FontAwesomeIcon icon={faFilm} className="me-2" />
-                  Phim lẻ
-                </Card.Title>
+                <Link href="/phim-le" passHref>
+                  <Card.Title className="text-danger">
+                    <FontAwesomeIcon icon={faFilm} className="me-2" />
+                    Phim lẻ
+                  </Card.Title>
+                </Link>
                 <Card.Text>
                   Tuyển tập các bộ phim lẻ hay nhất được cập nhật liên tục.
                 </Card.Text>
@@ -75,20 +79,24 @@ export default function HomePage() {
           </Col>
           <Col md={6} lg={4}>
             <Card className="h-100 shadow-lg bg-dark text-light">
-              <div
-                className="custom-card-image"
-                style={{
-                  height: "200px",
-                  backgroundImage: "url('/tv.png')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              ></div>
+              <Link href="/phim-bo" passHref>
+                <div
+                  className="custom-card-image"
+                  style={{
+                    height: "200px",
+                    backgroundImage: "url('/tv.png')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                ></div>
+              </Link>
               <Card.Body className="d-flex flex-column">
-                <Card.Title className="text-danger">
-                  <FontAwesomeIcon icon={faTv} className="me-2" />
-                  Phim bộ
-                </Card.Title>
+                <Link href="/phim-bo" passHref>
+                  <Card.Title className="text-danger">
+                    <FontAwesomeIcon icon={faTv} className="me-2" />
+                    Phim bộ
+                  </Card.Title>
+                </Link>
                 <Card.Text>
                   Phim bộ đặc sắc từ Hàn Quốc, Trung Quốc, Việt Nam và hơn thế
                   nữa.

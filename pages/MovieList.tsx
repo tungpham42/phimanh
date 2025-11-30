@@ -141,14 +141,14 @@ const MovieList: React.FC = () => {
             {shows.map((show) => (
               <Col key={show.id} xl={3} lg={3} md={6}>
                 <Card className="h-100 shadow-lg bg-secondary text-light">
-                  <Link href={`/phim-le/${show.id}`}>
+                  <Link href={`/phim-le/${show.id}`} passHref>
                     <div
                       className="position-relative"
                       style={{
                         paddingTop: "150%",
                         backgroundImage: `url(${show.poster_path
-                            ? `https://image.tmdb.org/t/p/w500${show.poster_path}`
-                            : PLACEHOLDER_IMAGE
+                          ? `https://image.tmdb.org/t/p/w500${show.poster_path}`
+                          : PLACEHOLDER_IMAGE
                           })`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
@@ -163,12 +163,12 @@ const MovieList: React.FC = () => {
                     </div>
                   </Link>
                   <Card.Body className="d-flex flex-column">
-                    <Link href={`/phim-le/${show.id}`}>
+                    <Link href={`/phim-le/${show.id}`} passHref>
                       <Card.Title
                         className="text-truncate text-danger mb-2"
                         style={{ textDecoration: "none", fontSize: "1.5rem" }}
                       >
-                        {show.title}
+                        {show.title.substring(0, 80)}...
                       </Card.Title>
                     </Link>
                     <Card.Text className="text-muted small">

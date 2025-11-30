@@ -145,7 +145,7 @@ const ShowList = () => {
               <Col key={show.id} xl={3} lg={3} md={6}>
                 <Card className="h-100 shadow bg-dark text-light transition-all hover-scale">
                   {/* Poster Image with Rating */}
-                  <Link href={`/phim-bo/${show.id}`}>
+                  <Link href={`/phim-bo/${show.id}`} passHref>
                     <div
                       className="position-relative overflow-hidden"
                       style={{ paddingTop: "150%" }}
@@ -173,14 +173,12 @@ const ShowList = () => {
 
                   {/* Show Info */}
                   <Card.Body className="d-flex flex-column">
-                    <Link href={`/phim-bo/${show.id}`}>
+                    <Link href={`/phim-bo/${show.id}`} passHref>
                       <Card.Title
-                        as={Link}
-                        href={`/phim-bo/${show.id}`}
                         className="text-truncate text-danger mb-2"
                         style={{ textDecoration: "none", fontSize: "1.5rem" }}
                       >
-                        {show.name}
+                        {show.name.substring(0, 80)}...
                       </Card.Title>
                     </Link>
                     <Card.Text className="text-muted small mb-2">
