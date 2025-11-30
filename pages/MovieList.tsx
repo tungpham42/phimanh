@@ -163,7 +163,7 @@ const MovieList: React.FC = () => {
                     </div>
                   </Link>
                   <Card.Body className="d-flex flex-column">
-                    <Link href={`/phim-le/${show.id}`} passHref>
+                    <Link href={`/phim-le/${show.id}`} passHref legacyBehavior>
                       <Card.Title
                         className="text-truncate text-danger mb-2"
                         style={{ textDecoration: "none", fontSize: "1.5rem" }}
