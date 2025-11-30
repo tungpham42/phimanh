@@ -168,7 +168,10 @@ const MovieList: React.FC = () => {
                         className="text-truncate mb-2"
                         style={{ textDecoration: "none", fontSize: "1.5rem" }}
                       >
-                        {show.title.substring(0, 80)}...
+                        {show.title.length > 80
+                          ? `${show.title.slice(0, 80)}…`
+                          : show.title
+                        }
                       </Card.Title>
                     </Link>
                     <Card.Text className="text-muted small">

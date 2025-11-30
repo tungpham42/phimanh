@@ -178,7 +178,10 @@ const ShowList = () => {
                         className="text-truncate mb-2"
                         style={{ fontSize: "1.5rem" }}
                       >
-                        {show.name.substring(0, 80)}...
+                        {show.name.length > 80
+                          ? `${show.name.slice(0, 80)}…`
+                          : show.name
+                        }
                       </Card.Title>
                     </Link>
                     <Card.Text className="text-muted small mb-2">
