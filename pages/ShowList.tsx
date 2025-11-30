@@ -49,8 +49,8 @@ const ShowList = () => {
       const endpoint = originalLanguage
         ? "/discover/tv"
         : searchQuery
-        ? "/search/tv"
-        : "/trending/tv/day";
+          ? "/search/tv"
+          : "/trending/tv/day";
       const { data } = await axios.get(`${BASE_URL}${endpoint}`, {
         params: {
           api_key: API_KEY,
@@ -145,41 +145,44 @@ const ShowList = () => {
               <Col key={show.id} xl={3} lg={3} md={6}>
                 <Card className="h-100 shadow bg-dark text-light transition-all hover-scale">
                   {/* Poster Image with Rating */}
-                  <div
-                    className="position-relative overflow-hidden"
-                    style={{ paddingTop: "150%" }}
-                  >
+                  <Link href={`/phim-bo/${show.id}`}>
                     <div
-                      className="position-absolute top-0 start-0 w-100 h-100 bg-dark"
-                      style={{
-                        backgroundImage: `url(${
-                          show.poster_path
+                      className="position-relative overflow-hidden"
+                      style={{ paddingTop: "150%" }}
+                    >
+                      <div
+                        className="position-absolute top-0 start-0 w-100 h-100 bg-dark"
+                        style={{
+                          backgroundImage: `url(${show.poster_path
                             ? `https://image.tmdb.org/t/p/w500${show.poster_path}`
                             : PLACEHOLDER_IMAGE
-                        })`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        transition: "transform 0.3s ease",
-                      }}
-                    />
-                    <div className="position-absolute top-0 end-0 m-2">
-                      <Badge bg="danger" pill>
-                        <FontAwesomeIcon icon={faStar} className="me-1" />
-                        {show.vote_average.toFixed(1)}
-                      </Badge>
+                            })`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          transition: "transform 0.3s ease",
+                        }}
+                      />
+                      <div className="position-absolute top-0 end-0 m-2">
+                        <Badge bg="danger" pill>
+                          <FontAwesomeIcon icon={faStar} className="me-1" />
+                          {show.vote_average.toFixed(1)}
+                        </Badge>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
 
                   {/* Show Info */}
                   <Card.Body className="d-flex flex-column">
-                    <Card.Title
-                      as={Link}
-                      href={`/phim-bo/${show.id}`}
-                      className="text-truncate text-danger mb-2"
-                      style={{ textDecoration: "none", fontSize: "1.5rem" }}
-                    >
-                      {show.name}
-                    </Card.Title>
+                    <Link href={`/phim-bo/${show.id}`}>
+                      <Card.Title
+                        as={Link}
+                        href={`/phim-bo/${show.id}`}
+                        className="text-truncate text-danger mb-2"
+                        style={{ textDecoration: "none", fontSize: "1.5rem" }}
+                      >
+                        {show.name}
+                      </Card.Title>
+                    </Link>
                     <Card.Text className="text-muted small mb-2">
                       {show.first_air_date?.split("-")[0] || "N/A"}
                     </Card.Text>
@@ -216,7 +219,7 @@ const ShowList = () => {
           </div>
         )}
       </Container>
-    </div>
+    </div >
   );
 };
 

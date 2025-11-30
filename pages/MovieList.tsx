@@ -56,8 +56,8 @@ const MovieList: React.FC = () => {
       const endpoint = originalLanguage
         ? "/discover/movie"
         : searchQuery
-        ? "/search/movie"
-        : "/trending/movie/day";
+          ? "/search/movie"
+          : "/trending/movie/day";
       const { data } = await axios.get<ApiResponse>(`${BASE_URL}${endpoint}`, {
         params: {
           api_key: API_KEY,
@@ -141,35 +141,36 @@ const MovieList: React.FC = () => {
             {shows.map((show) => (
               <Col key={show.id} xl={3} lg={3} md={6}>
                 <Card className="h-100 shadow-lg bg-secondary text-light">
-                  <div
-                    className="position-relative"
-                    style={{
-                      paddingTop: "150%",
-                      backgroundImage: `url(${
-                        show.poster_path
-                          ? `https://image.tmdb.org/t/p/w500${show.poster_path}`
-                          : PLACEHOLDER_IMAGE
-                      })`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  >
-                    <div className="position-absolute top-0 end-0 m-2">
-                      <Badge bg="danger" pill>
-                        <FontAwesomeIcon icon={faStar} className="me-1" />
-                        {show.vote_average.toFixed(1)}
-                      </Badge>
-                    </div>
-                  </div>
-                  <Card.Body className="d-flex flex-column">
-                    <Card.Title
-                      as={Link}
-                      href={`/phim-le/${show.id}`}
-                      className="text-truncate text-danger mb-2"
-                      style={{ textDecoration: "none", fontSize: "1.5rem" }}
+                  <Link href={`/phim-le/${show.id}`}>
+                    <div
+                      className="position-relative"
+                      style={{
+                        paddingTop: "150%",
+                        backgroundImage: `url(${show.poster_path
+                            ? `https://image.tmdb.org/t/p/w500${show.poster_path}`
+                            : PLACEHOLDER_IMAGE
+                          })`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
                     >
-                      {show.title}
-                    </Card.Title>
+                      <div className="position-absolute top-0 end-0 m-2">
+                        <Badge bg="danger" pill>
+                          <FontAwesomeIcon icon={faStar} className="me-1" />
+                          {show.vote_average.toFixed(1)}
+                        </Badge>
+                      </div>
+                    </div>
+                  </Link>
+                  <Card.Body className="d-flex flex-column">
+                    <Link href={`/phim-le/${show.id}`}>
+                      <Card.Title
+                        className="text-truncate text-danger mb-2"
+                        style={{ textDecoration: "none", fontSize: "1.5rem" }}
+                      >
+                        {show.title}
+                      </Card.Title>
+                    </Link>
                     <Card.Text className="text-muted small">
                       {show.release_date?.split("-")[0] || "N/A"}
                     </Card.Text>
