@@ -173,10 +173,10 @@ const ShowList = () => {
 
                   {/* Show Info */}
                   <Card.Body className="d-flex flex-column">
-                    <Link href={`/phim-bo/${show.id}`}>
+                    <Link href={`/phim-bo/${show.id}`} className="text-danger text-decoration-none cursor-pointer">
                       <Card.Title
-                        className="text-truncate text-danger mb-2 text-decoration-none cursor-pointer"
-                        style={{ textDecoration: "none", fontSize: "1.5rem" }}
+                        className="text-truncate mb-2"
+                        style={{ fontSize: "1.5rem" }}
                       >
                         {show.name.substring(0, 80)}...
                       </Card.Title>

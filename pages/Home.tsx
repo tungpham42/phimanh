@@ -60,8 +60,8 @@ export default function HomePage() {
                 ></div>
               </Link>
               <Card.Body className="d-flex flex-column">
-                <Link href="/phim-le" passHref legacyBehavior>
-                  <Card.Title className="text-danger">
+                <Link href="/phim-le" className="text-danger text-decoration-none cursor-pointer">
+                  <Card.Title>
                     <FontAwesomeIcon icon={faFilm} className="me-2" />
                     Phim lẻ
                   </Card.Title>
@@ -91,8 +91,8 @@ export default function HomePage() {
                 ></div>
               </Link>
               <Card.Body className="d-flex flex-column">
-                <Link href="/phim-bo">
-                  <Card.Title className="text-danger text-decoration-none cursor-pointer">
+                <Link href="/phim-bo" className="text-danger text-decoration-none cursor-pointer">
+                  <Card.Title>
                     <FontAwesomeIcon icon={faTv} className="me-2" />
                     Phim bộ
                   </Card.Title>
