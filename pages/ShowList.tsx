@@ -173,9 +173,9 @@ const ShowList = () => {
 
                   {/* Show Info */}
                   <Card.Body className="d-flex flex-column">
-                    <Link href={`/phim-bo/${show.id}`} passHref legacyBehavior>
+                    <Link href={`/phim-bo/${show.id}`}>
                       <Card.Title
-                        className="text-truncate text-danger mb-2 cursor-pointer"
+                        className="text-truncate text-danger mb-2 text-decoration-none cursor-pointer"
                         style={{ textDecoration: "none", fontSize: "1.5rem" }}
                       >
                         {show.name.substring(0, 80)}...

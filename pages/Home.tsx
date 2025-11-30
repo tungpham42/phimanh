@@ -91,8 +91,8 @@ export default function HomePage() {
                 ></div>
               </Link>
               <Card.Body className="d-flex flex-column">
-                <Link href="/phim-bo" passHref legacyBehavior>
-                  <Card.Title className="text-danger cursor-pointer">
+                <Link href="/phim-bo">
+                  <Card.Title className="text-danger text-decoration-none cursor-pointer">
                     <FontAwesomeIcon icon={faTv} className="me-2" />
                     Phim bộ
                   </Card.Title>
