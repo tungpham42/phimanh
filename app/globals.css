@@ -19,6 +19,7 @@ body {
   font-family: var(--font-primary) !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
+  overflow-y: scroll !important;
 }
 
 h1,
@@ -307,5 +308,5 @@ span.text-muted {
 }
 
 .collapsing {
-  transition: height .2s ease !important;
+  transition: height .2s ease-in-out !important;
 }
